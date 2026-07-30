@@ -1,0 +1,11 @@
+package br.com.fooddelivery.delivery_tracker.dto.response;
+
+public record ItemPedidoResponse(
+        Long id,
+
+        String nome,
+
+        Integer quantidade
+
+) {
+}
