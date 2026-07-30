@@ -1,4 +1,6 @@
-C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\config\SecurityConfig.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\controller\AuthController.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\controller\PedidoController.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\controller\UsuarioController.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\DeliveryTrackerApplication.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\domain\entity\HistoricoStatusPedido.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\domain\entity\ItemPedido.java
@@ -15,8 +17,10 @@ C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\dto\response\LoginResponse.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\dto\response\PedidoResponse.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\dto\response\UsuarioResponse.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\exception\handler\GlobalExceptionHandler.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\exception\RecursoNaoEncontradoException.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\exception\RegraNegocioException.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\exception\response\ErrorResponse.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\mapper\ItemPedidoMapper.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\mapper\PedidoMapper.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\mapper\UsuarioMapper.java
@@ -24,4 +28,14 @@ C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\repository\ItemPedidoRepository.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\repository\PedidoRepository.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\repository\UsuarioRepository.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\security\config\SecurityConfig.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\security\CustomUserDetails.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\security\JwtAuthenticationFilter.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\service\AtualizacaoStatusPedidoService.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\service\AuthService.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\service\HistoricoPedidoService.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\service\impl\UserDetailsServiceImpl.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\service\JwtService.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\service\PedidoService.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\service\UsuarioService.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\service\validator\StatusPedidoValidator.java

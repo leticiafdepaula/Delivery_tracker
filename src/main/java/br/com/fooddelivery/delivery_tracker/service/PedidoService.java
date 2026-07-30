@@ -25,7 +25,6 @@ public class PedidoService {
     private final HistoricoPedidoService historicoService;
     private final StatusPedidoValidator validator;
 
-
     public PedidoResponse criarPedido(
             CriarPedidoRequest request
     ){
@@ -35,7 +34,6 @@ public class PedidoService {
         pedido.setCliente(request.cliente());
         pedido.setEnderecoEntrega(request.enderecoEntrega());
         pedido.setStatus(StatusPedido.RECEBIDO);
-
 
         request.itens()
                 .forEach(itemRequest -> {
@@ -54,10 +52,8 @@ public class PedidoService {
                 StatusPedido.RECEBIDO
         );
 
-
         return pedidoMapper.toResponse(salvo);
     }
-
 
     public List<PedidoResponse> listar(){
 
