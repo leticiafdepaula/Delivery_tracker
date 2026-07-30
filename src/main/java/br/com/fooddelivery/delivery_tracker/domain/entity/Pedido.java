@@ -21,17 +21,14 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false)
     private String cliente;
 
-    @Column(nullable = false)
     private String enderecoEntrega;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private StatusPedido status;
 
-    @Column(nullable = false)
     private LocalDateTime dataCriacao;
 
     @Builder.Default
@@ -41,6 +38,13 @@ public class Pedido {
             orphanRemoval = true
     )
     private List<ItemPedido> itens = new ArrayList<>();
+
+    public void adicionarItem(ItemPedido item) {
+
+        itens.add(item);
+        item.setPedido(this);
+
+    }
 
     @PrePersist
     public void prePersist() {
