@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class UsuarioController {
 
-
     private final UsuarioService usuarioService;
-
 
     @PostMapping
     public ResponseEntity<UsuarioResponse> cadastrar(
@@ -31,5 +29,4 @@ public class UsuarioController {
                 .status(HttpStatus.CREATED)
                 .body(response);
     }
-
 }
