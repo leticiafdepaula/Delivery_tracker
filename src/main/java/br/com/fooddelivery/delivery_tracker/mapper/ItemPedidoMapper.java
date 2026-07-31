@@ -4,6 +4,7 @@ import br.com.fooddelivery.delivery_tracker.domain.entity.ItemPedido;
 import br.com.fooddelivery.delivery_tracker.dto.request.ItemPedidoRequest;
 import br.com.fooddelivery.delivery_tracker.dto.response.ItemPedidoResponse;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface ItemPedidoMapper {

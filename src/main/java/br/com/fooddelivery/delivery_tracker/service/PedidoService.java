@@ -9,9 +9,9 @@ import br.com.fooddelivery.delivery_tracker.exception.RecursoNaoEncontradoExcept
 import br.com.fooddelivery.delivery_tracker.mapper.ItemPedidoMapper;
 import br.com.fooddelivery.delivery_tracker.mapper.PedidoMapper;
 import br.com.fooddelivery.delivery_tracker.repository.PedidoRepository;
-import br.com.fooddelivery.delivery_tracker.service.validator.StatusPedidoValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -23,11 +23,9 @@ public class PedidoService {
     private final PedidoMapper pedidoMapper;
     private final ItemPedidoMapper itemPedidoMapper;
     private final HistoricoPedidoService historicoService;
-    private final StatusPedidoValidator validator;
 
-    public PedidoResponse criarPedido(
-            CriarPedidoRequest request
-    ){
+    @Transactional
+    public PedidoResponse criarPedido(CriarPedidoRequest request) {
 
         Pedido pedido = new Pedido();
 
@@ -35,15 +33,10 @@ public class PedidoService {
         pedido.setEnderecoEntrega(request.enderecoEntrega());
         pedido.setStatus(StatusPedido.RECEBIDO);
 
-        request.itens()
-                .forEach(itemRequest -> {
-
-                    ItemPedido item =
-                            itemPedidoMapper.toEntity(itemRequest);
-
-                    pedido.adicionarItem(item);
-
-                });
+        request.itens().forEach(itemRequest -> {
+            ItemPedido item = itemPedidoMapper.toEntity(itemRequest);
+            pedido.adicionarItem(item);
+        });
 
         Pedido salvo = pedidoRepository.save(pedido);
 
@@ -52,29 +45,28 @@ public class PedidoService {
                 StatusPedido.RECEBIDO
         );
 
-        return pedidoMapper.toResponse(salvo);
+        Pedido pedidoCompleto = pedidoRepository.findById(salvo.getId())
+                .orElseThrow();
+
+        return pedidoMapper.toResponse(pedidoCompleto);
     }
 
-    public List<PedidoResponse> listar(){
+    @Transactional
+    public List<PedidoResponse> listar() {
 
         return pedidoRepository.findAll()
                 .stream()
                 .map(pedidoMapper::toResponse)
                 .toList();
-
     }
 
-    public PedidoResponse buscarPorId(Long id){
+    @Transactional
+    public PedidoResponse buscarPorId(Long id) {
 
-        Pedido pedido =
-                pedidoRepository.findById(id)
-                        .orElseThrow(() ->
-                                new RecursoNaoEncontradoException(
-                                        "Pedido não encontrado"
-                                )
-                        );
+        Pedido pedido = pedidoRepository.findById(id)
+                .orElseThrow(() ->
+                        new RecursoNaoEncontradoException("Pedido não encontrado"));
 
         return pedidoMapper.toResponse(pedido);
-
     }
 }

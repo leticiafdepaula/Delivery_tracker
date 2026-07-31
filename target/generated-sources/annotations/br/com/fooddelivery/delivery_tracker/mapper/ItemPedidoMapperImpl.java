@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-07-31T01:03:20-0300",
+    date = "2026-07-31T17:16:07-0300",
     comments = "version: 1.6.3, compiler: javac, environment: Java 21.0.10 (Microsoft)"
 )
 @Component
@@ -35,14 +35,14 @@ public class ItemPedidoMapperImpl implements ItemPedidoMapper {
         }
 
         Long id = null;
+        String produto = null;
         Integer quantidade = null;
 
         id = item.getId();
+        produto = item.getProduto();
         quantidade = item.getQuantidade();
 
-        String nome = null;
-
-        ItemPedidoResponse itemPedidoResponse = new ItemPedidoResponse( id, nome, quantidade );
+        ItemPedidoResponse itemPedidoResponse = new ItemPedidoResponse( id, produto, quantidade );
 
         return itemPedidoResponse;
     }

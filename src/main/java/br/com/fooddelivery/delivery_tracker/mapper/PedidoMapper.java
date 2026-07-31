@@ -7,7 +7,8 @@ import org.mapstruct.MappingConstants;
 
 @Mapper(
         componentModel = "spring",
-        uses = {ItemPedidoMapper.class
+        uses = {ItemPedidoMapper.class,
+                HistoricoStatusMapper.class
         }
 )
 public interface PedidoMapper {

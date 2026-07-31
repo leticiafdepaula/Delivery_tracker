@@ -39,10 +39,25 @@ public class Pedido {
     )
     private List<ItemPedido> itens = new ArrayList<>();
 
+    @Builder.Default
+    @OneToMany(
+            mappedBy = "pedido",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<HistoricoStatusPedido> historico = new ArrayList<>();
+
     public void adicionarItem(ItemPedido item) {
 
-        itens.add(item);
+        this.itens.add(item);
         item.setPedido(this);
+
+    }
+
+    public void adicionarHistorico(HistoricoStatusPedido historico) {
+
+        this.historico.add(historico);
+        historico.setPedido(this);
 
     }
 
@@ -54,5 +69,6 @@ public class Pedido {
         if (status == null) {
             status = StatusPedido.RECEBIDO;
         }
+
     }
 }
