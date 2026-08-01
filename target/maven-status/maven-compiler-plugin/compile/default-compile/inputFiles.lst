@@ -21,6 +21,7 @@ C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\exception\RecursoNaoEncontradoException.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\exception\RegraNegocioException.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\exception\response\ErrorResponse.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\mapper\HistoricoStatusMapper.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\mapper\ItemPedidoMapper.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\mapper\PedidoMapper.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\mapper\UsuarioMapper.java
@@ -28,6 +29,7 @@ C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\repository\ItemPedidoRepository.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\repository\PedidoRepository.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\repository\UsuarioRepository.java
+C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\security\config\CorsConfig.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\security\config\SecurityConfig.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\security\CustomUserDetails.java
 C:\projetinhos\JavaWorkspace\delivery-tracker\src\main\java\br\com\fooddelivery\delivery_tracker\security\JwtAuthenticationFilter.java

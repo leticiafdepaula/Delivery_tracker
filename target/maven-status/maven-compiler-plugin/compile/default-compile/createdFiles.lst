@@ -3,12 +3,14 @@ br\com\fooddelivery\delivery_tracker\domain\enums\StatusPedido.class
 br\com\fooddelivery\delivery_tracker\exception\response\ErrorResponse.class
 br\com\fooddelivery\delivery_tracker\domain\entity\ItemPedido.class
 br\com\fooddelivery\delivery_tracker\service\UsuarioService.class
+br\com\fooddelivery\delivery_tracker\service\validator\StatusPedidoValidator$1.class
 br\com\fooddelivery\delivery_tracker\domain\entity\HistoricoStatusPedido.class
 br\com\fooddelivery\delivery_tracker\service\PedidoService.class
 br\com\fooddelivery\delivery_tracker\DeliveryTrackerApplication.class
 br\com\fooddelivery\delivery_tracker\mapper\ItemPedidoMapperImpl.class
 br\com\fooddelivery\delivery_tracker\security\JwtAuthenticationFilter.class
 br\com\fooddelivery\delivery_tracker\repository\PedidoRepository.class
+br\com\fooddelivery\delivery_tracker\mapper\HistoricoStatusMapper.class
 br\com\fooddelivery\delivery_tracker\dto\request\LoginRequest.class
 br\com\fooddelivery\delivery_tracker\exception\RegraNegocioException.class
 br\com\fooddelivery\delivery_tracker\repository\ItemPedidoRepository.class
@@ -20,6 +22,7 @@ br\com\fooddelivery\delivery_tracker\mapper\PedidoMapperImpl.class
 br\com\fooddelivery\delivery_tracker\service\validator\StatusPedidoValidator.class
 br\com\fooddelivery\delivery_tracker\domain\entity\Usuario$UsuarioBuilder.class
 br\com\fooddelivery\delivery_tracker\mapper\UsuarioMapper.class
+br\com\fooddelivery\delivery_tracker\security\config\CorsConfig.class
 br\com\fooddelivery\delivery_tracker\dto\response\LoginResponse.class
 br\com\fooddelivery\delivery_tracker\exception\handler\GlobalExceptionHandler.class
 br\com\fooddelivery\delivery_tracker\controller\UsuarioController.class
@@ -32,6 +35,7 @@ br\com\fooddelivery\delivery_tracker\dto\response\PedidoResponse.class
 br\com\fooddelivery\delivery_tracker\controller\PedidoController.class
 br\com\fooddelivery\delivery_tracker\domain\entity\Pedido.class
 br\com\fooddelivery\delivery_tracker\domain\entity\HistoricoStatusPedido$HistoricoStatusPedidoBuilder.class
+br\com\fooddelivery\delivery_tracker\mapper\HistoricoStatusMapperImpl.class
 br\com\fooddelivery\delivery_tracker\mapper\UsuarioMapperImpl.class
 br\com\fooddelivery\delivery_tracker\exception\RecursoNaoEncontradoException.class
 br\com\fooddelivery\delivery_tracker\dto\request\ItemPedidoRequest.class

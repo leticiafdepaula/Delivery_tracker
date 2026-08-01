@@ -45,7 +45,7 @@ public class GlobalExceptionHandler {
         ErrorResponse response = new ErrorResponse(
                 LocalDateTime.now(),
                 HttpStatus.BAD_REQUEST.value(),
-                "Regra de negócio",
+                "Operação inválida",
                 ex.getMessage(),
                 request.getRequestURI(),
                 null
