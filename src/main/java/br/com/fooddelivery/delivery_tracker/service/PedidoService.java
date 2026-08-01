@@ -34,8 +34,10 @@ public class PedidoService {
         pedido.setStatus(StatusPedido.RECEBIDO);
 
         request.itens().forEach(itemRequest -> {
+
             ItemPedido item = itemPedidoMapper.toEntity(itemRequest);
             pedido.adicionarItem(item);
+
         });
 
         Pedido salvo = pedidoRepository.save(pedido);
@@ -45,28 +47,39 @@ public class PedidoService {
                 StatusPedido.RECEBIDO
         );
 
-        Pedido pedidoCompleto = pedidoRepository.findById(salvo.getId())
-                .orElseThrow();
+        Pedido pedidoCompleto = pedidoRepository
+                .findComItensEHistoricoById(salvo.getId())
+                .orElseThrow(() ->
+                        new RecursoNaoEncontradoException(
+                                "Pedido não encontrado"
+                        )
+                );
 
         return pedidoMapper.toResponse(pedidoCompleto);
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public List<PedidoResponse> listar() {
 
-        return pedidoRepository.findAll()
+        return pedidoRepository.findAllBy()
                 .stream()
                 .map(pedidoMapper::toResponse)
                 .toList();
+
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public PedidoResponse buscarPorId(Long id) {
 
-        Pedido pedido = pedidoRepository.findById(id)
+        Pedido pedido = pedidoRepository
+                .findComItensEHistoricoById(id)
                 .orElseThrow(() ->
-                        new RecursoNaoEncontradoException("Pedido não encontrado"));
+                        new RecursoNaoEncontradoException(
+                                "Pedido não encontrado"
+                        )
+                );
 
         return pedidoMapper.toResponse(pedido);
+
     }
 }

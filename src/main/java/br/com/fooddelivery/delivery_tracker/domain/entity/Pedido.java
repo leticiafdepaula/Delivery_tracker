@@ -3,10 +3,9 @@ package br.com.fooddelivery.delivery_tracker.domain.entity;
 import br.com.fooddelivery.delivery_tracker.domain.enums.StatusPedido;
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_pedido")
@@ -37,15 +36,16 @@ public class Pedido {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<ItemPedido> itens = new ArrayList<>();
+    private Set<ItemPedido> itens =  new LinkedHashSet<>();
 
+    @OrderBy("dataAlteracao ASC")
     @Builder.Default
     @OneToMany(
             mappedBy = "pedido",
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<HistoricoStatusPedido> historico = new ArrayList<>();
+    private Set<HistoricoStatusPedido> historico =  new LinkedHashSet<>();
 
     public void adicionarItem(ItemPedido item) {
 

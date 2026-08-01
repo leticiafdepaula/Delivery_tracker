@@ -25,6 +25,8 @@ public class HistoricoPedidoService {
                         .status(status)
                         .build();
 
+        pedido.getHistorico().add(historico);
+
         repository.save(historico);
 
     }
