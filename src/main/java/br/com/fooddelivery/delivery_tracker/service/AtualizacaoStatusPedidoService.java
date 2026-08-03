@@ -1,9 +1,11 @@
 package br.com.fooddelivery.delivery_tracker.service;
 
 import br.com.fooddelivery.delivery_tracker.domain.entity.Pedido;
+import br.com.fooddelivery.delivery_tracker.domain.enums.StatusPedido;
 import br.com.fooddelivery.delivery_tracker.dto.request.AtualizarStatusPedidoRequest;
 import br.com.fooddelivery.delivery_tracker.dto.response.PedidoResponse;
 import br.com.fooddelivery.delivery_tracker.exception.RecursoNaoEncontradoException;
+import br.com.fooddelivery.delivery_tracker.exception.RegraNegocioException;
 import br.com.fooddelivery.delivery_tracker.mapper.PedidoMapper;
 import br.com.fooddelivery.delivery_tracker.repository.PedidoRepository;
 import br.com.fooddelivery.delivery_tracker.service.validator.StatusPedidoValidator;
@@ -23,7 +25,7 @@ public class AtualizacaoStatusPedidoService {
     public PedidoResponse atualizar(
             Long id,
             AtualizarStatusPedidoRequest request
-    ){
+    ) {
 
         Pedido pedido =
                 pedidoRepository.findById(id)
@@ -33,25 +35,34 @@ public class AtualizacaoStatusPedidoService {
                                 )
                         );
 
-        validator.validar(
-                pedido.getStatus(),
-                request.status()
-        );
+        if (pedido.getHistorico()
+                .stream()
+                .anyMatch(h -> h.getStatus() == StatusPedido.CANCELADO)) {
 
-        pedido.setStatus(
-                request.status()
-        );
+            throw new RegraNegocioException(
+                    "Este pedido foi cancelado e não pode mais ser alterado."
+            );
+        }
 
-        Pedido salvo =
-                pedidoRepository.save(pedido);
+            validator.validar(
+                    pedido.getStatus(),
+                    request.status()
+            );
+
+            pedido.setStatus(
+                    request.status()
+            );
+
+            Pedido salvo =
+                    pedidoRepository.save(pedido);
 
 
-        historicoService.registrar(
-                salvo,
-                request.status()
-        );
+            historicoService.registrar(
+                    salvo,
+                    request.status()
+            );
 
-        return pedidoMapper.toResponse(salvo);
+            return pedidoMapper.toResponse(salvo);
 
+        }
     }
-}

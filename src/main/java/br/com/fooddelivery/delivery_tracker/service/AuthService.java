@@ -1,7 +1,9 @@
 package br.com.fooddelivery.delivery_tracker.service;
 
+import br.com.fooddelivery.delivery_tracker.dto.request.CadastroUsuarioRequest;
 import br.com.fooddelivery.delivery_tracker.dto.request.LoginRequest;
 import br.com.fooddelivery.delivery_tracker.dto.response.LoginResponse;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -13,8 +15,9 @@ public class AuthService {
 
     private final AuthenticationManager authenticationManager;
     private final JwtService jwtService;
+    private final UsuarioService usuarioService;
 
-    public LoginResponse login(LoginRequest request){
+    public LoginResponse login(LoginRequest request) {
 
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -28,4 +31,9 @@ public class AuthService {
         return new LoginResponse(token);
     }
 
+    public void cadastrar(@Valid CadastroUsuarioRequest request) {
+
+        usuarioService.cadastrar(request);
+
+    }
 }
