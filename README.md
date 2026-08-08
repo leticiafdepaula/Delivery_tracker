@@ -4,8 +4,6 @@ API REST desenvolvida em **Java + Spring Boot** para gerenciamento de pedidos de
 
 O sistema permite autenticação de usuários utilizando JWT, cadastro de novos usuários, gerenciamento de pedidos e atualização do fluxo de entrega.
 
-Este projeto foi desenvolvido como parte do **Tech Challenge**.
-
 ---
 
 # 📚 Funcionalidades
